@@ -8,38 +8,41 @@
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 </body>
-<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js"></script>
-
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
 
 <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyD3P7Y-hu_hMcFgVBT7yYJCz5LrYDCs_Uc",
-        authDomain: "tutorial-3948a.firebaseapp.com",
-        databaseURL: "https://tutorial-3948a.firebaseio.com",
-        projectId: "tutorial-3948a",
-        storageBucket: "",
-        messagingSenderId: "173999573993",
-        appId: "1:173999573993:web:7eee0ee3aa1e4a04"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD3P7Y-hu_hMcFgVBT7yYJCz5LrYDCs_Uc",
+    authDomain: "tutorial-3948a.firebaseapp.com",
+    databaseURL: "https://tutorial-3948a.firebaseio.com",
+    projectId: "tutorial-3948a",
+    storageBucket: "",
+    messagingSenderId: "173999573993",
+    appId: "1:173999573993:web:7eee0ee3aa1e4a04"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
 
-    registerUser=()=>{
-        user_email=document.getElementById("email").value
-        user_pwd=document.getElementById("password").value
-        firebase.auth().createUserWithEmailAndPassword(user_email,user_pwd).then(function(resp){
+   function registerUser(){
+
+  var user_email = document.getElementById("email").value;
+  var user_pwd = document.getElementById("password").value;
+firebase.auth().createUserWithEmailAndPassword(user_email,user_pwd).then(function(resp){
             console.log(resp);
             alert("user created")
         }).catch(function(err){
             console.log(err);
             console.log(err.message)
-        })
+        });
 
-    }
+
+
+}
 </script>
 
 </html>
